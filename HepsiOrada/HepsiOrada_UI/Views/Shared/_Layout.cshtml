@@ -1,0 +1,154 @@
+﻿@***Not: Beni epey uğraştıran basit bir özellik: www.root dan png vs dosya çekmek istediğimiz zaman, ilgili dosya konumunun başına ~/ işareti koyarak , wwwroot dan ilgili dosyayı çekeceğimizi belirtmeliyiz. Aksi takdirde png, jpg gibi dosyalar çalışmıyor.*@
+<!DOCTYPE html>
+@* Tüm sayfalarda ilgili CSS ve JS ayarları çıksın diye, indirdiğimiz templatein index sayfasındaki css ve js ayarlarını layout razor pageine kopyaladık.*@
+<html>
+<head>
+    @*Meta tagleri sayfanın tanımı,yazarı,keywordleri gibi özelliklerini gösteren kısımdır. SEO(Searching Engine Optimization) için eskisi kadar olmasa da önemlidir.Google artık meta tagler dışında; domain yaşı, ülke uzantısı,kopya içeriği, gibi 200 küsür farklı kriteri de inceliyormuş.*@
+    <title>HepsiOrada</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon_HO.PNG">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/templatemo.css">
+    <link rel="stylesheet" href="~/assets/css/custom.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="~/assets/css/fontawesome.min.css">
+
+</head>
+<body>
+    @*Headerı oluşturduğumuz Views/Shared/Components/Header/Default.cshtml yapısı içinde tutarak, burada recall yapmamızı sağlayan kod.*@
+    @await Component.InvokeAsync("Header")
+    @RenderBody()
+
+ <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">HepsiOrada.com</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Levazım, Koru Sokağı No:2, 34340 Beşiktaş/İstanbul
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">0 850 444 44 44</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">info@hepsiorada.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Ürünler</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a asp-controller="Laptop" asp-action="Index" class="text-decoration-none">Laptop</a></li> 
+                        <li><a asp-controller="Bilgisayar" asp-action="Index" class="text-decoration-none">Masaüstü Bilgisayar</a></li>
+                        <li> <a asp-controller="Telefon" asp-action="Index" class="text-decoration-none">Akıllı Telefon</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Daha Fazla Bilgi</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                       <li><a asp-controller="Home" asp-action="Index" class="text-decoration-none">Ana Sayfa</a></li>
+                       <li><a asp-controller="AboutUs" asp-action="Index" class="text-decoration-none">Hakkımızda</a></li>
+                        <li><a class="text-decoration-none" href="#">Mağaza</a></li>
+                        <li><a asp-controller="Contact" asp-action="us" class="text-decoration-none">İletişim</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/okan.kandemirr/?hl=tr"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/okann38"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/in/okan-kandemir-77427014b/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">E-mail Adresi</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+                        <div class="input-group-text btn-success text-light">Kayıt ol</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Her şey ayağına gelsin! © Copyright 2022 KANDEMIR-MARKET Elektronik Hizmetler Tic. A.Ş. Her Hakkı Saklıdır 
+                            | Okan Kandemir tarafından tasarlandı. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="~/assets/js/jquery-1.11.0.min.js"></script>
+    <script src="~/assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/templatemo.js"></script>
+    <script src="~/assets/js/custom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script>
+        function AddToBasket(productId, count)
+        $.ajax({
+            url: '/Basket/AddToBasket',
+            Method: 'Post',
+            Data: { count: count, productId: productId },
+            success: (data) => {
+                console.log(data);
+                alert("ürün başarı ile eklendi");
+            },
+            error: (data) => [alert("hata")]
+        })
+        $(document).ready(() => {
+            RefreshBasket();
+        });
+        function RefreshBasket() {
+            $.ajax({
+                url: '/Basket/RefreshBasketCount',
+                method: 'Post',
+                success: (data) => {
+                    $('#bsk').html(data);
+                },
+                error: (data) => { console.log(data);; }
+            });
+        }
+    </script>
+    <script src="~/js/main.js"></script>
+    @RenderSection("script",false);
+    <!-- End Script -->
+</body>
+</html>

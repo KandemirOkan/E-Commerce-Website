@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\HepsiOrada_UI.props" />
+</Project>
